@@ -39,41 +39,7 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 
 
