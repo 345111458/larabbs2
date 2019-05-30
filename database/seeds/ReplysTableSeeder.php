@@ -20,7 +20,7 @@ class ReplysTableSeeder extends Seeder
         // 获取 Faker 实例
         $faker = app(Faker\Generator::class);
 
-        $replys = factory(Reply::class)->times(6000)->make()->each(function ($reply, $index) use ($user_ids, $topic_ids, $faker)
+        $replys = factory(Reply::class)->times(100)->make()->each(function ($reply, $index) use ($user_ids, $topic_ids, $faker)
         {
             // 从用户 ID 数组中随机取出一个并赋值
             $reply->user_id = $faker->randomElement($user_ids);

@@ -21,7 +21,7 @@ class TopicObserver
         //
     }
 
-    //监控器 入库【前】执行
+    //监控 入库【前】执行
     public function saving(Topic $topic){
     	$topic->body = clean($topic->body,'user_topic_body');
 
@@ -31,7 +31,7 @@ class TopicObserver
     }
 
 
-    //监控器 入库【后】执行
+    //监控 入库【后】执行
     public function saved(Topic $topic){
 
         // 如 slug 字段无内容，即使用翻译器对 title 进行翻译
