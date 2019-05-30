@@ -9,19 +9,26 @@ class Topic extends Model
     ];
 
 
-
+    // 关联分类
     public function category(){
 
     	return $this->belongsTo(Category::class);
     }
 
-
+    // 关联用户
     public function user(){
 
     	return $this->belongsTo(User::class);
     }
 
+    // 关联回复
+    public function replies(){
 
+        return $this->hasMany(Reply::class);
+    }
+
+
+    // 查询顺序 用了本地化 scope
     public function scopeWithOrder($query, $order)
     {
         // 不同的排序，使用不同的数据读取逻辑
