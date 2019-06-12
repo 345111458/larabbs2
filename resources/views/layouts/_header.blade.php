@@ -39,11 +39,20 @@
           
           
           <li class="nav-item dropdown">
+
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px">
               {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              @can('manage_contents')
+                <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                  <i class="fas fa-tachometer-alt mr-2"></i>
+                  管理后台
+                </a>
+                <div class="dropdown-divider"></div>
+              @endcan
+            
               <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
                 <i class="far fa-user mr-2"></i>
                 个人中心
